@@ -1,13 +1,44 @@
 {
+  "entryPagePath": "pages/home/home",
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/home/home"
+      },
+      {
+        "pagePath": "pages/schedule/list/list"
+      },
+      {
+        "pagePath": "pages/vehiche/list/list"
+      },
+      {
+        "pagePath": "pages/user/display/display"
+      }
+    ]
+  },
   "pages": [
-    "pages/index/index"
+    "pages/home/home",
+    "pages/schedule/list/list",
+    "pages/vehiche/list/list",
+    "pages/user/display/display",
+    "pages/schedule/book/book"
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarBackgroundColor": "#ffffff"
+    "navigationBarTitleText": "陪驾达人",
+    "navigationBarBackgroundColor": "#ffffff",
+    "enablePullDownRefresh": true
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
 }

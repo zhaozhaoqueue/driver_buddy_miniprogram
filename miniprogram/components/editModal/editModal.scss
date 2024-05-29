@@ -1,0 +1,21 @@
+/* components/editModal/editModal.wxss */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  view {
+    margin: 10rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    &:first-child {
+      width: 30%;
+    }
+
+    &:last-child {
+      width: 70%;
+      border-bottom: dashed 2rpx grey;
+    }
+    
+  }
+}

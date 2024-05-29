@@ -1,0 +1,38 @@
+/* pages/user/display/display.wxss */
+
+.avatar_btn {
+  background-color: transparent;
+
+}
+
+.avatar_btn::after {
+  border: none;
+}
+
+.avatar {
+  height: 200rpx;
+  width: 200rpx;
+  border-radius: 50%;
+}
+
+.info {
+  .register {
+    height: 200rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+
+    .item {
+      height: 200rpx;
+      line-height: 200rpx;
+    }
+
+    .btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

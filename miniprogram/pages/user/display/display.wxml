@@ -1,0 +1,26 @@
+<!--pages/user/display/display.wxml-->
+<view class="img">
+  <button class="avatar_btn" open-type="chooseAvatar" bindchooseavatar="chooseAvatar">
+    <image class="avatar" src="{{ user.avatar_url}}"></image>
+  </button>
+</view>
+<view class="info">
+  <edit-modal title="昵称" value="{{ user.nick_name }}" bind:update-value="updateNickName"></edit-modal>
+  <edit-modal title="电话" value="{{ user.phone_number }}" bind:update-value="updatePhoneNum"></edit-modal>
+  <edit-modal title="地址" value="{{ user.address }}" bind:update-value="updateAddress"></edit-modal>
+  <view class="register" >
+    <block wx:if="{{ user.register_status != 'draft'}}">
+      <view class="item">注册陪练状态</view>
+      <view class="item">{{ user.register_status }}</view>
+      <view class="btn">
+        <view><button size="mini" >更新信息</button></view>
+        <view><button size="mini" type="warn">取消注册</button></view>
+      </view>
+    </block>
+    <block wx:else>
+      <view>
+        <van-button plain hairline type="primary">注册成为陪练</van-button>
+      </view>
+    </block>
+  </view>
+</view>

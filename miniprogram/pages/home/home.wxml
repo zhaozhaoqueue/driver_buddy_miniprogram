@@ -1,0 +1,48 @@
+<!--pages/home/home.wxml-->
+<swiper 
+    class="swiper-container"
+    indicator-dots 
+    autoplay 
+    circular 
+    interval="1000" 
+    easing-function="linear"
+>
+    <swiper-item>1</swiper-item>
+    <swiper-item>2</swiper-item>
+    <swiper-item>3</swiper-item>
+</swiper>
+<view class="container">
+  <scroll-view class="scroll-y" scroll-y >
+    <view wx:for="{{ partner_list }}" wx:for-item="partner" wx:key="id" class="partner">
+      <view class="left">
+        <view class="name">{{ partner.name}}</view>
+        <image src="{{ partner.avatar_url}}" mode="aspectFill"></image>
+      </view>
+      <view class="right">
+        <view class="intro">
+          <view>陪练经验: {{ partner.experienced_hours}} 小时</view>
+          <view>驾照类型: {{ partner.license_type}}</view>
+        </view>
+        <view class="availability">
+          <view 
+            wx:for="{{ partner.date_list }}" 
+            wx:for-item="d" 
+            wx:key="index" 
+            class="date_item {{ d.is_available?'':'not_available'}}"
+            bind:tap="schedule_training"
+            data-id="{{ partner.id}}"
+            data-date="{{ d.date }}"
+            data-available="{{ d.is_available}}"
+          > 
+            {{ d.date }}
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  
+
+  <view>
+    <van-button plain hairline type="primary">注册成为陪练</van-button>
+  </view>
+</view>

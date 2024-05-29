@@ -1,0 +1,3 @@
+<!--pages/schedule/book/book.wxml-->
+<view>{{ partner_id }}</view>
+<view>{{ schedule_date}}</view>

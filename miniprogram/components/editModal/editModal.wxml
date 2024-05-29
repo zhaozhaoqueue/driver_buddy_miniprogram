@@ -1,0 +1,5 @@
+<!--components/editModal/editModal.wxml-->
+<view class="container">
+  <view>{{ title }}</view>
+  <view bind:tap="edit">{{ value }}</view>
+</view>
